@@ -11,14 +11,7 @@ import { KinopoiskDev, Filter,MovieFields,} from '@openmoviedb/kinopoiskdev_clie
         limit: 10,
       };
   
-    const { data, error, message } = await kp.movie.getByFilters(query);
+    const data = await kp.movie.getByFilters(query);
 
-    if (data) {
-      const { docs, page, limit } = data;
-      return docs;
-    }
-  
-    if (error)  {
-      return error;
-    }
+    return data;
   };

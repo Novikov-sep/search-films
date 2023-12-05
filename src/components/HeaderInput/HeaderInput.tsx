@@ -24,25 +24,31 @@ const HeaderInput: FC = () => {
       });
   }
 
-  useEffect(() => {
-    async function fetchTop() {
-      await fetchTopTen()
-        .then((res: any) => {
-          setData(res);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    }
+  async function fetchTop() {
+    await fetchTopTen()
+      .then((res: any) => {
+        if (res.data.docs) {
+          setData(res.data.docs);
+        }
+      })
+      .catch((error) => {
+        setData([]);
+      });
+  }
 
+  useEffect(() => {
+    // fetchTop();
+  }, []);
+
+  useEffect(() => {
     if (search.length > 0) {
       setData([]);
       SearchItem();
     } else {
       setData([]);
-      fetchTop();
+      // fetchTop();
     }
-  }, []);
+  }, [search]);
 
   useEffect(() => {
     document.addEventListener("mousedown", handleClick);
@@ -89,7 +95,7 @@ const HeaderInput: FC = () => {
         ) : (
           <div className={style.search__text}>Входит в топ 10:</div>
         )}
-        {data.length
+        {!!data
           ? data.map((item: any, id: number) => (
               <div key={id} className={style.search__item}>
                 {(item?.poster?.previewUrl && (

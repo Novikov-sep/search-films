@@ -15,7 +15,7 @@ const ErrorPage: FC = () => {
         <p>
           <i>{error.statusText || error.message}</i>
         </p>
-        <Link to="/">Home</Link>
+        <Link to="/search-films/">Home</Link>
       </div>
       <Footer />
     </div>

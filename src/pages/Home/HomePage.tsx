@@ -32,11 +32,7 @@ const HomePage: FC = () => {
     async function addFilms(params: fetchFilmsAddParams) {
       if (page > 1) {
         await fetchFilmsAdd(params).then((res) => {
-          if (res.data) {
-            dispatch(addItems(res.data.docs));
-          } else {
-            throw new Error(res.error + res.message);
-          }
+          dispatch(addItems(res));
         });
       }
     }

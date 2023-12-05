@@ -40,5 +40,10 @@ import { KinopoiskDev, Filter,MovieFields,} from '@openmoviedb/kinopoiskdev_clie
       const res = await kp.movie.getByFilters(query);
 
       const { data, error, message} = res;
-      return res;
+      if(data){
+        return res;
+      } else if(error) {
+        return [];
+      }
+      
   };

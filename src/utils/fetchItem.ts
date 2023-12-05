@@ -10,6 +10,6 @@ import { KinopoiskDev,} from '@openmoviedb/kinopoiskdev_client';
     }
   
     if (error || message)  {
-      console.log('FETCH' ,error, message);
+      console.log(error, message);
     }
   };
