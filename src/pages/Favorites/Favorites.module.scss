@@ -1,0 +1,46 @@
+.body {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.item {
+    flex: 0 0 calc(100% / 3 - 34px);
+    background-color: gray;
+    border-radius: 6px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.image {
+    overflow: hidden;
+    img {
+        max-width: 300px;
+        aspect-ratio: 1/1.5;
+        object-fit: cover;
+        transition: all 0.4s ease 0s;
+        @media (any-hover: hover) {
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+.title {
+    display: block;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--main-color);
+    margin-bottom: 20px;
+    transition: color 0.3s ease 0s;
+    @media (any-hover: hover) {
+        &:hover {
+            color: var(--highlight-color);
+        }
+    }
+}

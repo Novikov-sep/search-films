@@ -1,0 +1,40 @@
+.card_skeleton {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    background-color: gray;
+    flex: 0 1 calc(100% / 3 - 50px);
+    padding: 15px;
+    border-radius: 6px;
+}
+
+.top {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.squire {
+    top: 0;
+    left: 0;
+    aspect-ratio: 1;
+}
+
+.rating {
+    bottom: 0;
+    right: 0;
+    aspect-ratio: 1;
+}
+
+.bottom {
+}
+
+.title {
+    position: relative;
+    left: 160px;
+    margin: 0 auto;
+    margin-bottom: 25px;
+}
+
+.description {
+}

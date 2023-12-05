@@ -1,0 +1,91 @@
+.body {
+    display: flex;
+    gap: 30px;
+}
+
+.left {
+    flex: 0 1 calc(100% / 3);
+}
+
+.poster {
+    margin-bottom: 30px;
+    img {
+        max-width: 300px;
+        aspect-ratio: 1 / 1.5;
+        object-fit: cover;
+    }
+}
+
+.trailer {
+    &__title {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+}
+
+.right {
+    flex: 0 1 calc(100% / 2);
+}
+
+.name {
+    font-size: 32px;
+    font-weight: 800;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.rating {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.description {
+    font-size: 16px;
+    margin-bottom: 10px;
+    line-height: 120%;
+}
+
+.watch {
+    display: inline-block;
+    font-size: 24px;
+    color: var(--main-color);
+    background-color: var(--highlight-color);
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    transition: all 0.3s ease 0s;
+    @media (any-hover: hover) {
+        &:hover {
+            font-weight: 500;
+            transform: scale(1.1);
+        }
+    }
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    p {
+        font-size: 24px;
+        font-weight: 500;
+        margin-bottom: 15px;
+    }
+}
+
+.genres {
+    display: flex;
+    gap: 20px;
+    span {
+        flex: 0 0 300px;
+    }
+}
+
+.text {
+    display: flex;
+    gap: 20px;
+    font-weight: 400;
+    span {
+        flex: 0 0 300px;
+    }
+}
