@@ -42,7 +42,7 @@ const HeaderInput: FC = () => {
       setData([]);
       fetchTop();
     }
-  }, [debouncedSearchItem]);
+  }, []);
 
   useEffect(() => {
     document.addEventListener("mousedown", handleClick);

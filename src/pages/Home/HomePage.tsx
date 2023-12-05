@@ -51,7 +51,7 @@ const HomePage: FC = () => {
 
   useEffect(() => {
     dispatch(fetchFilms());
-  }, [dispatch]);
+  }, []);
 
   return (
     <div className="container">

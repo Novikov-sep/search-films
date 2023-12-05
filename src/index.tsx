@@ -14,12 +14,12 @@ import Favorites from "./pages/Favorites/Favorites";
 
 const router = createBrowserRouter([
   {
-    path: "search-films/",
+    path: "/",
     element: <Layout />,
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "",
+        path: "search-films/",
         element: <HomePage />,
       },
       {
