@@ -31,7 +31,7 @@ const Header: FC = () => {
     <header>
       <div className="container">
         <div className={style.body}>
-          <Link to="/" className={style.logo}>
+          <Link to="/search-films/" className={style.logo}>
             <img
               src="/img/header/Logo.png"
               alt="Logo"
@@ -41,7 +41,7 @@ const Header: FC = () => {
           <nav>
             <ul className={style.list}>
               <li>
-                <NavLink to="/" className={style.link}>
+                <NavLink to="/search-films/" className={style.link}>
                   Главная
                 </NavLink>
               </li>
