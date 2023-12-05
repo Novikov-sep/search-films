@@ -14,7 +14,7 @@ import Favorites from "./pages/Favorites/Favorites";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "search-films/",
     element: <Layout />,
     errorElement: <ErrorPage />,
     children: [
