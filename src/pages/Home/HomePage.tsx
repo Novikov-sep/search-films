@@ -53,10 +53,11 @@ const HomePage: FC = () => {
     <div className="container">
       <div className={style.body}>
         <div className={style.cards}>
-          {films.status === "loading" &&
-            Array(9)
-              .fill(0)
-              .map((item, id) => <SkeletonCard key={id} />)}
+          {films.status === "loading" ||
+            (films.items.length === 0 &&
+              Array(9)
+                .fill(0)
+                .map((item, id) => <SkeletonCard key={id} />))}
           {films.status === "success" &&
             films.items.map((item, id) => (
               <Card key={item.id} item={item} id={id} />

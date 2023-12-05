@@ -12,6 +12,7 @@ const HeaderInput: FC = () => {
   const [active, setActive] = useState(false);
   const searchRef = useRef<HTMLDivElement>(null);
   const [search, setSearch] = useState("");
+  const [topData, setTopData] = useState([]);
   const debouncedSearchItem = useDebounce(search, 500);
 
   async function SearchItem() {
@@ -27,31 +28,28 @@ const HeaderInput: FC = () => {
   async function fetchTop() {
     await fetchTopTen()
       .then((res: any) => {
-        if (res.data.docs) {
-          setData(res.data.docs);
+        if (res) {
+          setTopData(res);
         }
       })
       .catch((error) => {
-        setData([]);
+        console.log(error);
       });
   }
-
-  useEffect(() => {
-    // fetchTop();
-  }, []);
 
   useEffect(() => {
     if (search.length > 0) {
       setData([]);
       SearchItem();
     } else {
-      setData([]);
-      // fetchTop();
+      setData(topData);
     }
   }, [search]);
 
   useEffect(() => {
     document.addEventListener("mousedown", handleClick);
+
+    fetchTop();
 
     return () => {
       document.removeEventListener("mousedown", handleClick);
@@ -95,7 +93,7 @@ const HeaderInput: FC = () => {
         ) : (
           <div className={style.search__text}>Входит в топ 10:</div>
         )}
-        {!!data
+        {data.length
           ? data.map((item: any, id: number) => (
               <div key={id} className={style.search__item}>
                 {(item?.poster?.previewUrl && (

@@ -12,10 +12,9 @@ import { KinopoiskDev, Filter,MovieFields, MovieQueryBuilder,} from '@openmovied
     const { data, error, message } = await kp.movie.getBySearchQuery(query);
   
     if (data) {
-      const { docs, page, limit } = data;
-      return docs;
+      return data.docs;
+    } else if(error) {
+      return [];
     }
-  
-    if (error) console.log(error, message);
   };
   
