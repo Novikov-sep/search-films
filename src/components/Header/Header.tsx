@@ -33,7 +33,7 @@ const Header: FC = () => {
         <div className={style.body}>
           <Link to="/search-films/" className={style.logo}>
             <img
-              src="search-films/img/header/Logo.png"
+              src="/search-films/img/header/Logo.png"
               alt="Logo"
               className={style.logo__img}
             />

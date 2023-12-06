@@ -50,6 +50,7 @@ const HeaderInput: FC = () => {
     document.addEventListener("mousedown", handleClick);
 
     fetchTop();
+    setData(topData);
 
     return () => {
       document.removeEventListener("mousedown", handleClick);
