@@ -44,13 +44,12 @@ const HeaderInput: FC = () => {
     } else {
       setData(topData);
     }
-  }, [search]);
+  }, [search, topData]);
 
   useEffect(() => {
     document.addEventListener("mousedown", handleClick);
 
     fetchTop();
-    setData(topData);
 
     return () => {
       document.removeEventListener("mousedown", handleClick);

@@ -41,7 +41,7 @@ import { KinopoiskDev, Filter,MovieFields,} from '@openmoviedb/kinopoiskdev_clie
 
       const { data, error, message} = res;
       if(data){
-        return res;
+        return data.docs;
       } else if(error) {
         return [];
       }
